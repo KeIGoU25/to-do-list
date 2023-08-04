@@ -1,0 +1,17 @@
+$myFont: Helvetica, sans-serif;
+$myFontSize: 18px;
+$myWidth: 680px;
+$btn-color: #fff;
+$btn-radius: 5px;
+$btn-bg: #745a5a;
+
+body {
+  font-family: $myFont;
+  font-size: $myFontSize;
+}
+
+button {
+  color: $btn-color;
+  border-radius: $btn-radius;
+  background-color: $btn-bg;
+}
