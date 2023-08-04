@@ -4,6 +4,7 @@ $myWidth: 680px;
 $btn-color: #fff;
 $btn-radius: 5px;
 $btn-bg: #745a5a;
+$pointer : pointer;
 
 body {
   font-family: $myFont;
@@ -14,4 +15,28 @@ button {
   color: $btn-color;
   border-radius: $btn-radius;
   background-color: $btn-bg;
+  cursor: $pointer;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: left;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #333;
+}
+
+th {
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: #000;
 }

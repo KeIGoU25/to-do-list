@@ -7,6 +7,30 @@ button {
   color: #fff;
   border-radius: 5px;
   background-color: #745a5a;
+  cursor: pointer;
+}
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: left;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #333;
+}
+
+th {
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: #000;
 }
 
 /*# sourceMappingURL=style.css.map */
