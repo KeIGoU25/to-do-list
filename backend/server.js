@@ -11,28 +11,34 @@ app.listen(port, () => {
     console.log(path.join(__dirname, '../public'));
 });
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://kswag22l:oyAjB0CMDApGUx4D@cluster0.4s3pmiy.mongodb.net/?retryWrites=true&w=majority";
+const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://kswag22l:oyAjB0CMDApGUx4D@cluster0.4s3pmiy.mongodb.net/test?retryWrites=true&w=majority";
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
+const client = new MongoClient(uri);
 
 async function run() {
   try {
-    // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    console.log("Connection success");
+
+    const db = client.db('todoDb1'); // Reference the database
+    const taskCollection = db.collection('tasks1'); // Reference a collection
+
+    // Insert a document into the collection
+    const result = await taskCollection.insertOne({
+      title: 'Complete the project',
+      status: 'In Progress'
+    });
+
+    console.log("Inserted:", result.insertedId);
+
+  } catch (err) {
+    console.error(err);
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();
+    console.log("Close...");
   }
 }
+
 run().catch(console.dir);
