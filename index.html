@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="" onsubmit="return false;">
+    <form id="taskForm" onsubmit="return false;">
         <input type="text" name="task" id="task" placeholder="Enter a task">
         <button type="submit">
             Add
@@ -21,11 +21,7 @@
                     <th>Task Name</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>codas</td>
-                    <td>my first task to commit</td>
-                </tr>
+            <tbody id="taskList">
             </tbody>
         </table>
     </main>
