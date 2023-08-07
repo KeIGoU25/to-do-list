@@ -2,17 +2,27 @@ let task = document.getElementById("task");
 let taskForm = document.getElementById("taskForm");
 let taskId = 1;
 
-taskForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
+const displayTask = (task) => {
     let taskList = document.getElementById("taskList");
 
     taskList.innerHTML += `
         <tr>
             <td>${taskId}</td>
-            <td>${task.value}</td>
+            <td>${task}</td>
         </tr>
     `;
     taskId++;
-    task.value = null;
-})
+}
+
+$(document).ready(function () {
+    $('#submitBtn').click(function (e) { 
+        e.preventDefault();
+        const task = $('#task').val();
+
+        $.post("/submit", { task: task },
+        function (task) { 
+            displayTask(task);
+            $('#task').val('');
+        });       
+    });
+});

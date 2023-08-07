@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form id="taskForm" onsubmit="return false;">
-        <input type="text" name="task" id="task" placeholder="Enter a task">
-        <button type="submit">
+    <form id="taskForm">
+        <input type="text" name="task" id="task" placeholder="Enter a task" required>
+        <button type="submit" id="submitBtn">
             Add
         </button>
     </form>
@@ -26,5 +26,6 @@
         </table>
     </main>
 </body>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script src="script.js"></script>
 </html>
